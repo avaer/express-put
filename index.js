@@ -3,7 +3,7 @@ const fs = require('fs');
 
 module.exports = express => {
   const put = (dirname, mountPath = '') => {
-    const staticServer = express.static();
+    const staticServer = express.static(dirname);
 
     return (req, res, next) => {
       if (req.method === 'PUT') {
